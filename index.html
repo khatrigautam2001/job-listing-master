@@ -60,14 +60,113 @@
 								<li><a href="single.html">single</a></li>
 				            </ul> -->
 				          </li>
-				          <li><a class="ticker-btn" href="#">Signup</a></li>
-				          <li><a class="ticker-btn" href="#">Login</a></li>				          				          
+				          <li><a id="signupBtnModal" class="ticker-btn" href="#">Signup</a></li>
+				          <li><a id="loginBtnModal" class="ticker-btn" href="#">Login</a></li>				          				          
+				          <li><a id="logoutBtnModal" class="ticker-btn" onclick="logout()">Logout</a></li>				          				          
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		
 			    	</div>
 			    </div>
 			  </header><!-- #header -->
 
+			  <!-- Start Login Modal -->
+			  <section>			  
+			  <div id="modal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+				  <div class="modal-content">
+					<div class="modal-header border-bottom-0">
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+					<div class="modal-body">
+					  <div class="form-title text-center">
+						<h4>Login</h4>
+					  </div>
+					  <div class="d-flex flex-column text-center">
+						<form autocomplete="off" onsubmit="login(event)">
+						  <div class="form-group d-none">
+								<input type="email" class="form-control" id="email1"placeholder="Your email address...">
+						  </div>
+						  <div class="form-group">
+							<input type="email" class="form-control" id="loginEmail"placeholder="Your email address...">
+						  </div>
+						  <div class="form-group">
+							<input type="password" class="form-control" id="loginPassword" placeholder="Your password...">
+						  </div>
+						  <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
+						</form>
+						
+						<div class="text-center text-muted delimiter">or use a social network</div>
+						<div class="d-flex justify-content-center social-buttons">
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
+							<i class="fab fa-twitter"></i>
+						  </button>
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
+							<i class="fab fa-facebook"></i>
+						  </button>
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
+							<i class="fab fa-linkedin"></i>
+						  </button>
+						</di>
+					  </div>
+					</div>
+				  </div>
+					<div class="modal-footer d-flex justify-content-center">
+					  <div class="signup-section">Not a member yet? <a href="#a" class="text-info"> Sign Up</a>.</div>
+					</div>
+				</div>
+			  </div>
+			</section>
+			  <!-- End Login Modal -->
+			  <!-- Start Signup Modal -->
+			  <section>			  
+			  <div id="modal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+				  <div class="modal-content">
+					<div class="modal-header border-bottom-0">
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+					<div class="modal-body">
+					  <div class="form-title text-center">
+						<h4>Signup</h4>
+					  </div>
+					  <div class="d-flex flex-column text-center">
+						<form autocomplete="off" onsubmit="signup(event)">
+						  <div class="form-group ">
+								<input type="text" class="form-control" id="signupusername" placeholder="Your Username...">
+						  </div>
+						  <div class="form-group">
+							<input type="email" class="form-control" id="signupEmail"placeholder="Your email address...">
+						  </div>
+						  <div class="form-group">
+							<input type="password" class="form-control" id="signupPassword" placeholder="Your password...">
+						  </div>
+						  <button type="submit" class="btn btn-info btn-block btn-round">Signup</button>
+						</form>
+						
+						<div class="text-center text-muted delimiter">or use a social network</div>
+						<div class="d-flex justify-content-center social-buttons">
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
+							<i class="fab fa-twitter"></i>
+						  </button>
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
+							<i class="fab fa-facebook"></i>
+						  </button>
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
+							<i class="fab fa-linkedin"></i>
+						  </button>
+						</di>
+					  </div>
+					</div>
+				  </div>
+
+				</div>
+			  </div>
+			</section>
+			  <!-- End Signup Modal
 
 			<!-- start banner Area -->
 			<section class="banner-area relative">	
@@ -722,7 +821,7 @@
 			<link rel="stylesheet"
 				href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
-			<div class="row d-flex justify-content-center">
+			<div class="row d-flex justify-content-center testimonial-heading">
 				<div class="menu-content col-lg-10">
 					<div class="title text-center">
 						<h1 class="mb-10">Testimonials Review</h1>
@@ -730,7 +829,7 @@
 					</div>
 				</div>
 			</div>						
-			<div class="owl-carousel owl-theme mt-5">
+			<div class="owl-carousel owl-theme mt-5" style="overflow: hidden !important">
 				<div class="owl-item">
 					<div class="card">
 						<div class="img-card">
@@ -881,7 +980,7 @@
 		</div>
 		</section>
 			<!-- Start download Area -->
-			<section class="download-area section-gap" id="app">
+			<!-- <section class="download-area section-gap" id="app">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-6 download-left">
@@ -920,7 +1019,7 @@
 						</div>
 					</div>
 				</div>	
-			</section>
+			</section> -->
 			<!-- End download Area -->
 		
 			<!-- start footer Area -->		
@@ -1011,8 +1110,41 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<script src="js/parallax.min.js"></script>		
 			<script src="js/mail-script.js"></script>	
 			<script src="js/main.js"></script>	
+
+
+			<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>     -->
+			<!-- <script>
+				document.addEventListener('DOMContentLoaded', function() {
+					var elems = document.querySelectorAll('.modal');
+					var instances = M.Modal.init(elems);
+				}); 
+			</script> -->
+
+			<script src="https://www.gstatic.com/firebasejs/9.7.0/firebase-app-compat.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/9.7.0/firebase-auth-compat.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore-compat.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/9.7.0/firebase-storage-compat.js"></script>
+			
+			<script>
+				// Your web app's Firebase configuration
+				
+				var firebaseConfig = {
+					apiKey: "AIzaSyDVWZmtdFvzJe6IyqyyDtpZCRdeN4jAngc",
+					authDomain: "job-portal-firebase-e4f1b.firebaseapp.com",
+					projectId: "job-portal-firebase-e4f1b",
+					storageBucket: "job-portal-firebase-e4f1b.appspot.com",
+					messagingSenderId: "33798932822",
+					appId: "1:33798932822:web:4e7c8fd459dd9dffddaef7"
+				};
+
+				// Initialize Firebase
+				firebase.initializeApp(firebaseConfig);
+			</script>
+
+			<script src="./firebase/auth.js"></script>
+    		<script src="./firebase/firestore-db.js"></script>
 		</body>
-	</html>
+</html>
 
 
 

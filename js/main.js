@@ -293,3 +293,23 @@ $(document).ready(function(){
       }
   });
 });
+
+
+
+// Login Modal
+$(document).ready(function() {             
+  
+  $("#loginBtnModal").click(function(){
+    $("#modal2").modal('show');
+  });
+
+  $("#signupBtnModal").click(function(){
+    $("#modal1").modal('show');
+  });
+  
+  $('#modal2').modal('hide');
+  $('#modal1').modal('hide');
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+});

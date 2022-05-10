@@ -56,6 +56,7 @@ body {
   font-weight: 300;
   line-height: 1.625em;
   position: relative;
+  box-sizing: border-box;
 }
 
 ol, ul {
@@ -3076,6 +3077,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .download-area {
   background-color: #f9f9ff;
+  width: auto;
 }
 
 @media (max-width: 960px) {
@@ -4328,3 +4330,41 @@ filter 650ms ease-in-out;
 
 
 
+/* Login Modal */
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 400px;
+  }
+  .modal-dialog .modal-content {
+    padding: 1rem;
+  }
+}
+.modal-header .close {
+  margin-top: -1.5rem;
+}
+
+.form-title {
+  margin: -2rem 0rem 2rem;
+}
+
+.btn-round {
+  border-radius: 3rem;
+}
+
+.delimiter {
+  padding: 1rem;
+}
+
+.social-buttons .btn {
+  margin: 0 0.5rem 1rem;
+}
+
+.signup-section {
+  padding: 0.3rem 0rem;
+}
+
+
+
+.testimonial-heading{
+  width: 100% !important;
+}
