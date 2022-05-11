@@ -16,6 +16,7 @@ async function signup(e){
         //await result.user.sendEmailVerification();
         // M.toast({html:`Welcome ${result.user.email}`, classes:"green"});
         console.log(result);
+        document.querySelector('#modal1 button.close').click()
     }
     catch(err){
         console.log(err);
@@ -24,6 +25,8 @@ async function signup(e){
 
     email.value = "";
     password.value = "";
+
+    window.location.href = "loggedin.html";
 
     // M.Modal.getInstance(myModal[1]).close();
     // console.log(email.value, password.value);
@@ -38,6 +41,8 @@ async function login(e){
         const result = await firebase.auth().signInWithEmailAndPassword(email.value, password.value);
         // M.toast({html:`Welcome ${result.user.email}`, classes:"green"});
         console.log(result);
+        document.querySelector('#modal2 button.close').click()
+        
     }
     catch(err){
         console.log(err);
@@ -47,7 +52,8 @@ async function login(e){
 
     email.value = "";
     password.value = "";
- 
+    
+    window.location.href = "loggedin.html";
     // M.Modal.getInstance(myModal[0]).close();
     // console.log(email.value, password.value);
 }
@@ -55,6 +61,7 @@ async function login(e){
 
 function logout(){
     firebase.auth().signOut();
+    window.location.href = "index.html";
     // document.querySelector("#proimg").src = "./assets/no-image-icon-15.png"
 }
 
@@ -64,9 +71,9 @@ const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       console.log(user);
     //   getUserInfo(user.uid);
-    document.getElementById('loginBtnModal').style.display = "none"
-    document.getElementById('signupBtnModal').style.display = "none"
-    document.getElementById('logoutBtnModal').style.display = "block" 
+    document.getElementById('loginBtnModal').classList.add("d-none")
+    document.getElementById('signupBtnModal').classList.add("d-none")
+    document.getElementById('logoutBtnModal').classList.remove("d-none") 
       
     getUserInfoRealtime(user.uid);
     if(user.uid == 'C22V5wAus6b77BFvG0qb4XCwAB93'){
@@ -74,13 +81,13 @@ const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
     }
     } else {
     //   getUserInfo(null)
-    getUserInfoRealtime(null);
+    // getUserInfoRealtime(null);
       console.log("Signout Successfully!!");
-      document.getElementById('table').style.display="none"
-      document.getElementById('logoutBtnModal').style.display = "none" 
-      document.getElementById('loginBtnModal').style.display = "block"
-      document.getElementById('signupBtnModal').style.display = "block"
-    unsubscribeUser()
+    //   document.getElementById('table').style.display="none"
+      document.getElementById('logoutBtnModal').classList.add('d-none')
+      document.getElementById('loginBtnModal').classList.remove("d-none")
+      document.getElementById('signupBtnModal').classList.remove("d-none")
+    // unsubscribeUser()
     //   M.toast({html:"Signout Successfully!! ", classes:"green"});
     }
   });

@@ -62,7 +62,7 @@
 				          </li>
 				          <li><a id="signupBtnModal" class="ticker-btn" href="#">Signup</a></li>
 				          <li><a id="loginBtnModal" class="ticker-btn" href="#">Login</a></li>				          				          
-				          <li><a id="logoutBtnModal" class="ticker-btn" onclick="logout()">Logout</a></li>				          				          
+				          <li><a style="cursor: pointer;" id="logoutBtnModal" class="ticker-btn d-none" onclick="logout()">Logout</a></li>				          				          
 				        </ul>
 				      </nav><!-- #nav-menu-container -->		    		
 			    	</div>
@@ -113,7 +113,7 @@
 					</div>
 				  </div>
 					<div class="modal-footer d-flex justify-content-center">
-					  <div class="signup-section">Not a member yet? <a href="#a" class="text-info"> Sign Up</a>.</div>
+					  <div class="signup-section">Not a member yet? <a onclick="goSignupFromLogin()" href="#a" class="text-info"> Sign Up</a>.</div>
 					</div>
 				</div>
 			  </div>
