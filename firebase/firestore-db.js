@@ -153,6 +153,7 @@ function updateUserProfile(e){
 
 function updateEmployeProfile(e){
     e.preventDefault()
+    console.log("called here");
     const userDocRef = firebase.firestore()
     .collection('employe')
     .doc(firebase.auth().currentUser.uid) 
