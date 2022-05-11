@@ -166,7 +166,107 @@
 				</div>
 			  </div>
 			</section>
-			  <!-- End Signup Modal
+			  <!-- End Signup Modal -->
+
+
+			  <!-- Start EmployerLogin Modal -->
+			  <section>			  
+			  <div id="modal4" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+				  <div class="modal-content">
+					<div class="modal-header border-bottom-0">
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+					<div class="modal-body">
+					  <div class="form-title text-center">
+						<h4>Employer Login</h4>
+					  </div>
+					  <div class="d-flex flex-column text-center">
+						<form autocomplete="off" onsubmit="employerLogin(event)">
+						  <div class="form-group d-none">
+								<input type="email" class="form-control" id="email1"placeholder="Your email address...">
+						  </div>
+						  <div class="form-group">
+							<input type="email" class="form-control" id="loginEmployeEmail"placeholder="Your email address...">
+						  </div>
+						  <div class="form-group">
+							<input type="password" class="form-control" id="loginEmployePassword" placeholder="Your password...">
+						  </div>
+						  <button type="submit" class="btn btn-info btn-block btn-round">Login</button>
+						</form>
+						
+						<div class="text-center text-muted delimiter">or use a social network</div>
+						<div class="d-flex justify-content-center social-buttons">
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
+							<i class="fab fa-twitter"></i>
+						  </button>
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
+							<i class="fab fa-facebook"></i>
+						  </button>
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
+							<i class="fab fa-linkedin"></i>
+						  </button>
+						</di>
+					  </div>
+					</div>
+				  </div>
+					<div class="modal-footer d-flex justify-content-center">
+					  <div class="signup-section">Not a member yet? <a onclick="goSignupFromLoginEmploye()" href="#a" class="text-info"> Sign Up</a>.</div>
+					</div>
+				</div>
+			  </div>
+			</section>
+			  <!-- End EmployerLogin Modal -->
+			  <!-- Start EmployerSignup Modal -->
+			  <section>			  
+			  <div id="modal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+				  <div class="modal-content">
+					<div class="modal-header border-bottom-0">
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+					<div class="modal-body">
+					  <div class="form-title text-center">
+						<h4>Employer Signup</h4>
+					  </div>
+					  <div class="d-flex flex-column text-center">
+						<form autocomplete="off" onsubmit="employerSignup(event)">
+						  <div class="form-group ">
+								<input type="text" class="form-control" id="signupEmployeusername" placeholder="Your Username...">
+						  </div>
+						  <div class="form-group">
+							<input type="email" class="form-control" id="signupEmployeEmail"placeholder="Your email address...">
+						  </div>
+						  <div class="form-group">
+							<input type="password" class="form-control" id="signupEmployePassword" placeholder="Your password...">
+						  </div>
+						  <button type="submit" class="btn btn-info btn-block btn-round">Signup</button>
+						</form>
+						
+						<div class="text-center text-muted delimiter">or use a social network</div>
+						<div class="d-flex justify-content-center social-buttons">
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
+							<i class="fab fa-twitter"></i>
+						  </button>
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
+							<i class="fab fa-facebook"></i>
+						  </button>
+						  <button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
+							<i class="fab fa-linkedin"></i>
+						  </button>
+						</di>
+					  </div>
+					</div>
+				  </div>
+
+				</div>
+			  </div>
+			</section>
+			  <!-- End EmployerSignup Modal -->
 
 			<!-- start banner Area -->
 			<section class="banner-area relative">	
@@ -182,8 +282,8 @@
 							<div class="title text-center">
 								<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
 								<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-								<a class="primary-btn" href="#">I am a Candidate</a>
-								<a class="primary-btn" href="#">We are an Employer</a>
+								<a class="primary-btn" href="#" id="loginCandidate">I am a Candidate</a>
+								<a class="primary-btn" href="#" id="loginEmploye">We are an Employer</a>
 							</div>
 						</div>
 					</div>	

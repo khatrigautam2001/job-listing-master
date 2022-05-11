@@ -59,6 +59,69 @@ async function login(e){
 }
 
 
+// Employer Login / Signup
+async function employerSignup(e){
+    e.preventDefault();
+    const email = document.querySelector("#signupEmployeEmail");
+    const password = document.querySelector("#signupEmployePassword");
+    const username = document.querySelector("#signupEmployeusername");
+    
+
+    try{
+        const result = await firebase.auth().createUserWithEmailAndPassword(email.value, password.value);
+        await result.user.updateProfile({
+            displayName:username.value
+        })
+        console.log('email:- ',email.value,' username ',username.value)
+        console.log('Employee Signup username:- ',username.value)
+        createEmployeCollection(result.user);
+        //await result.user.sendEmailVerification();
+        // M.toast({html:`Welcome ${result.user.email}`, classes:"green"});
+        console.log(result);
+        document.querySelector('#modal1 button.close').click()
+    }
+    catch(err){
+        console.log(err);
+        // M.toast({html: err.message, classes:"red"});
+    }
+
+    email.value = "";
+    password.value = "";
+
+    window.location.href = "employeLoggedin.html";
+
+    // M.Modal.getInstance(myModal[1]).close();
+    // console.log(email.value, password.value);
+}
+
+async function employerLogin(e){
+    e.preventDefault();
+    const email = document.querySelector("#loginEmployeEmail");
+    const password = document.querySelector("#loginEmployePassword");
+
+    try{
+        const result = await firebase.auth().signInWithEmailAndPassword(email.value, password.value);
+        // M.toast({html:`Welcome ${result.user.email}`, classes:"green"});
+        console.log(result);
+        document.querySelector('#modal2 button.close').click()
+        window.location.href = "employeLoggedin.html";
+        
+    }
+    catch(err){
+        console.log(err);
+        // M.toast({html: err.message, classes:"red"});
+    }
+
+
+    email.value = "";
+    password.value = "";
+    
+    
+    // M.Modal.getInstance(myModal[0]).close();
+    // console.log(email.value, password.value);
+}
+
+
 function logout(){
     firebase.auth().signOut();
     window.location.href = "index.html";
@@ -70,18 +133,16 @@ const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
     console.log("here");
     if (user) {
       console.log(user);
-    //   getUserInfo(user.uid);
+    getUserInfo(user.uid);
+    getUserInfoRealtime(user.uid);
+    getEmployeInfoRealtime(user.uid);
     document.getElementById('loginBtnModal').classList.add("d-none")
     document.getElementById('signupBtnModal').classList.add("d-none")
     document.getElementById('logoutBtnModal').classList.remove("d-none") 
-      
-    getUserInfoRealtime(user.uid);
-    if(user.uid == 'C22V5wAus6b77BFvG0qb4XCwAB93'){
-        allUserDetails()
-    }
     } else {
-    //   getUserInfo(null)
-    // getUserInfoRealtime(null);
+    //   getUserInfo(user.uid)
+    getUserInfoRealtime(user.uid);
+    getEmployeInfoRealtime(user.uid);
       console.log("Signout Successfully!!");
     //   document.getElementById('table').style.display="none"
       document.getElementById('logoutBtnModal').classList.add('d-none')

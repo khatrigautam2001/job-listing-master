@@ -33,14 +33,7 @@ const saveProfile = ()=>{
 //     }
 
 
-const goSignupFromLogin = ()=>{
-  document.querySelector('#modal2 button.close').click()
-  $(document).ready(function() {             
-    $("#signupBtnModal").click(function(){
-      $("#modal1").modal('show');
-    });
-  });
-}
+
 
 
 

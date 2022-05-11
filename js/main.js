@@ -302,6 +302,13 @@ $(document).ready(function() {
   $("#loginBtnModal").click(function(){
     $("#modal2").modal('show');
   });
+  $("#loginCandidate").click(function(){
+    $("#modal2").modal('show');
+  });
+  
+  $("#loginEmploye").click(function(){
+    $("#modal4").modal('show');
+  });
 
   $("#signupBtnModal").click(function(){
     $("#modal1").modal('show');
@@ -313,3 +320,18 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip()
   })
 });
+
+
+const goSignupFromLogin = ()=>{
+  document.querySelector('#modal2 button.close').click()
+  $(document).ready(function() {             
+      $("#modal1").modal('show');
+  });
+}
+
+const goSignupFromLoginEmploye = ()=>{
+  document.querySelector('#modal4 button.close').click()
+  $(document).ready(function() {             
+      $("#modal3").modal('show');
+  });
+}
