@@ -120,7 +120,7 @@
                     <div class="col-md-2">
                         <!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/> -->
                         <a onclick="editMyProfile()" id="editProfileBtn" class="ticker-btn">Edit Profile</a>
-                        <a type="submit" id="saveProfile" onclick="saveProfile()"class="ticker-btn d-none" >Save</a>
+                        <a type="submit" id="saveProfile" onclick="handleSaveProfile()"class="ticker-btn d-none" >Save</a>
                         
                     </div>
                 </div>
@@ -222,16 +222,7 @@
 
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="/js/loggedin.js"></script>
-        <script>
-            window.onload = () => {
-                console.log('window onload called')
-                allUserDetails()
-                unsubscribe()
-                // getUserInfoRealtime(user.uid);
-            
-            }          
-        </script>
+        <script src="/js/employeloggedin.js"></script>
 
 
 </body>
