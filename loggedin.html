@@ -66,14 +66,14 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container emp-profile">
-            <form method="post" autocomplete="off" id="editProfile" onsubmit="updateUserProfile(event)">
+            <form method="post" autocomplete="off" id="editProfile" >
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-img">
                             <img id="proimg" src="https://www.kindpng.com/picc/m/24-248253_user-profile-default-image-png-clipart-png-download.png" alt=""/>
                             <div class="file btn btn-lg btn-primary">
                                 Change Photo
-                                <input type="file" accept="image/*" onchange="uploadProfileImage(event)" />
+                                <input type="file" accept="image/*" onchange="uploadProfileImage(event, 'users')" />
                             </div>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                     <div class="col-md-2">
                         <!-- <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/> -->
                         <a onclick="editMyProfile()" id="editProfileBtn" class="ticker-btn">Edit Profile</a>
-                        <a type="submit" id="saveProfile" onclick="saveProfile()"class="ticker-btn d-none" >Save</a>
+                        <a type="submit" id="saveProfile" onclick="handleSaveProfile()"class="ticker-btn d-none" >Save</a>
                         
                     </div>
                 </div>
@@ -105,19 +105,19 @@
                     <div class="card mt-3 col-md-4 social-links" >
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0 d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Website</h6>
+                            <h6 class="mb-0 d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-globe mr-2 icon-inline"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>Portfolio</h6>
                             <!-- <span class="text-secondary">https://bootdey.com</span> -->
-                            <input type="text" class="editableDetail" disabled value="https://bootdey.com">
+                            <input type="text" name="portfolioUrl" class="editableDetail" disabled value="https://bootdey.com">
                           </li>
                           <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                             <h6 class="mb-0 d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github mr-2 icon-inline"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>Github</h6>
                             <!-- <span class="text-secondary">Github</span> -->
-                            <input type="text" class="editableDetail" disabled value="https://github.com">
+                            <input type="text" name="github" class="editableDetail" disabled value="https://github.com">
                           </li>
                           <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                             <h6 class="mb-0 d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>Linkedin</h6>
                             <!-- <span class="text-secondary">@linkedin</span> -->
-                            <input type="text" class="editableDetail" disabled value="https://linkedin.com">
+                            <input type="text" name="linkedin" class="editableDetail" disabled value="https://linkedin.com">
                           </li>
                           <!-- <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                             <h6 class="mb-0 d-flex align-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram mr-2 icon-inline text-danger"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>Instagram</h6>
@@ -195,7 +195,7 @@
 
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <p><input disabled name="experience" class="editableDetail experienceTextField" type="number" value="1"> years</p>
+                                                    <p><input disabled name="experience" class="editableDetail experienceTextField" type="text"> years</p>
                                                 </div>
                                             </div>
                                             <div class="row resumeFieldToggle" id="resumeToggle">   <!-- style="visibility: hidden;"-->
@@ -203,8 +203,10 @@
                                                     <label>Resume</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="file" accept="image/*" onchange="uploadImage(event)" />
+                                                    <input type="file" id="resumeUpload" class="d-none" accept="application/pdf" onchange="uploadProfileImage(event, 'users', 'pdf')" />
+                                                    <a href="" id="resumeLink">resume.pdf</a>
                                                 </div>
+
                                             </div>
                                 </div>
                             
