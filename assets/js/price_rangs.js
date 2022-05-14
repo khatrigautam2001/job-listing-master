@@ -1402,10 +1402,10 @@
 
                 if (values_num) {
                     text_single = this.decorate(p_values[this.result.from]);
-                    this.$cache.single.html(text_single);
+                    this.$cache.jobs.html(text_single);
                 } else {
                     text_single = this.decorate(this._prettify(this.result.from), this.result.from);
-                    this.$cache.single.html(text_single);
+                    this.$cache.jobs.html(text_single);
                 }
 
                 this.calcLabels();
@@ -1436,7 +1436,7 @@
                     text_from = this.decorate(p_values[this.result.from]);
                     text_to = this.decorate(p_values[this.result.to]);
 
-                    this.$cache.single.html(text_single);
+                    this.$cache.jobs.html(text_single);
                     this.$cache.from.html(text_from);
                     this.$cache.to.html(text_to);
 
@@ -1452,7 +1452,7 @@
                     text_from = this.decorate(this._prettify(this.result.from), this.result.from);
                     text_to = this.decorate(this._prettify(this.result.to), this.result.to);
 
-                    this.$cache.single.html(text_single);
+                    this.$cache.jobs.html(text_single);
                     this.$cache.from.html(text_from);
                     this.$cache.to.html(text_to);
 

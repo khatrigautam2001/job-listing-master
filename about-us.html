@@ -33,32 +33,235 @@
 
 			  <header id="header" id="home">
 			    <div class="container">
-			    	<div class="row align-items-center justify-content-between d-flex">
-				      <div id="logo">
-				        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
-				      </div>
-				      <nav id="nav-menu-container">
-				        <ul class="nav-menu">
-				          <li class="menu-active"><a href="index.html">Home</a></li>
-				          <li><a href="about-us.html">About Us</a></li>
-				          <li><a href="category.html">Category</a></li>
-				          <li><a href="price.html">Price</a></li>
-				          <li><a href="blog-home.html">Blog</a></li>
-				          <li><a href="contact.html">Contact</a></li>
-				          <li class="menu-has-children"><a href="">Pages</a>
-				            <ul>
-								<li><a href="elements.html">elements</a></li>
-								<li><a href="search.html">search</a></li>
-								<li><a href="single.html">single</a></li>
-				            </ul>
-				          </li>
-				          <li><a class="ticker-btn" href="#">Signup</a></li>
-				          <li><a class="ticker-btn" href="#">Login</a></li>				          				          
-				        </ul>
-				      </nav><!-- #nav-menu-container -->		    		
-			    	</div>
+						<nav class="navbar navbar-expand-lg navbar-light bg-tra">
+							<a class="navbar-brand" href="#">Job Portal</a>
+							<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+								<span class="navbar-toggler-icon">   
+									<i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+								</span>
+								<!-- <span class="navbar-toggler-icon"></span> -->
+							</button>
+						
+							<div class="collapse navbar-collapse" id="navbarSupportedContent">
+								<ul class="navbar-nav ml-auto mr-xs-auto">
+									<li class="nav-item active">
+										<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+									</li>
+									<li class="nav-item active">
+										<a class="nav-link" href="about-us.html">About Us</a>
+									</li>
+									<li class="nav-item active">
+										<a id="signupBtnModal" class="nav-link" href="#">Sgnup</a>
+									</li>
+									<li class="nav-item active">
+										<a id="loginBtnModal" class="nav-link" href="#">Login</a>
+									</li>
+									<li class="nav-item active">
+										<a style="cursor: pointer;" id="logoutBtnModal" class="nav-link d-none" href="#" onclick="logout()">Logout</a>
+									</li>										
+								</ul>
+							</div>
+						</nav>
 			    </div>
 			  </header><!-- #header -->
+
+			  <!-- Start Login Modal -->
+			  <section>			  
+				<div id="modal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+					  <div class="modal-header border-bottom-0">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+					  </div>
+					  <div class="modal-body">
+						<div class="form-title text-center">
+						  <h4>Login</h4>
+						</div>
+						<div class="d-flex flex-column text-center">
+						  <form autocomplete="off" onsubmit="login(event)">
+							<div class="form-group d-none">
+								  <input type="email" class="form-control" id="email1"placeholder="Your email address...">
+							</div>
+							<div class="form-group">
+							  <input type="email" class="form-control" id="loginEmail"placeholder="Your email address...">
+							</div>
+							<div class="form-group">
+							  <input type="password" class="form-control" id="loginPassword" placeholder="Your password...">
+							</div>
+							<button type="submit" class="btn btn-info btn-block btn-round">Login</button>
+						  </form>
+						  
+						  <div class="text-center text-muted delimiter">or use a social network</div>
+						  <div class="d-flex justify-content-center social-buttons">
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
+							  <i class="fab fa-twitter"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
+							  <i class="fab fa-facebook"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
+							  <i class="fab fa-linkedin"></i>
+							</button>
+						  </di>
+						</div>
+					  </div>
+					</div>
+					  <div class="modal-footer d-flex justify-content-center">
+						<div class="signup-section">Not a member yet? <a onclick="goSignupFromLogin()" href="#a" class="text-info"> Sign Up</a>.</div>
+					  </div>
+				  </div>
+				</div>
+			  </section>
+				<!-- End Login Modal -->
+				<!-- Start Signup Modal -->
+				<section>			  
+				<div id="modal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+					  <div class="modal-header border-bottom-0">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+					  </div>
+					  <div class="modal-body">
+						<div class="form-title text-center">
+						  <h4>Signup</h4>
+						</div>
+						<div class="d-flex flex-column text-center">
+						  <form autocomplete="off" onsubmit="signup(event)">
+							<div class="form-group ">
+								  <input type="text" class="form-control" id="signupusername" placeholder="Your Username...">
+							</div>
+							<div class="form-group">
+							  <input type="email" class="form-control" id="signupEmail"placeholder="Your email address...">
+							</div>
+							<div class="form-group">
+							  <input type="password" class="form-control" id="signupPassword" placeholder="Your password...">
+							</div>
+							<button type="submit" class="btn btn-info btn-block btn-round">Signup</button>
+						  </form>
+						  
+						  <div class="text-center text-muted delimiter">or use a social network</div>
+						  <div class="d-flex justify-content-center social-buttons">
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
+							  <i class="fab fa-twitter"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
+							  <i class="fab fa-facebook"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
+							  <i class="fab fa-linkedin"></i>
+							</button>
+						  </di>
+						</div>
+					  </div>
+					</div>
+  
+				  </div>
+				</div>
+			  </section>
+				<!-- End Signup Modal -->
+
+			   <!-- Start EmployerLogin Modal -->
+			   <section>			  
+				<div id="modal4" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+					  <div class="modal-header border-bottom-0">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+					  </div>
+					  <div class="modal-body">
+						<div class="form-title text-center">
+						  <h4>Employer Login</h4>
+						</div>
+						<div class="d-flex flex-column text-center">
+						  <form autocomplete="off" onsubmit="employerLogin(event)">
+							<div class="form-group d-none">
+								  <input type="email" class="form-control" id="email1"placeholder="Your email address...">
+							</div>
+							<div class="form-group">
+							  <input type="email" class="form-control" id="loginEmployeEmail"placeholder="Your email address...">
+							</div>
+							<div class="form-group">
+							  <input type="password" class="form-control" id="loginEmployePassword" placeholder="Your password...">
+							</div>
+							<button type="submit" class="btn btn-info btn-block btn-round">Login</button>
+						  </form>
+						  
+						  <div class="text-center text-muted delimiter">or use a social network</div>
+						  <div class="d-flex justify-content-center social-buttons">
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
+							  <i class="fab fa-twitter"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
+							  <i class="fab fa-facebook"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
+							  <i class="fab fa-linkedin"></i>
+							</button>
+						  </di>
+						</div>
+					  </div>
+					</div>
+					  <div class="modal-footer d-flex justify-content-center">
+						<div class="signup-section">Not a member yet? <a onclick="goSignupFromLoginEmploye()" href="#a" class="text-info"> Sign Up</a>.</div>
+					  </div>
+				  </div>
+				</div>
+			  </section>
+				<!-- End EmployerLogin Modal -->
+				<!-- Start EmployerSignup Modal -->
+				<section>			  
+				<div id="modal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+					  <div class="modal-header border-bottom-0">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						  <span aria-hidden="true">&times;</span>
+						</button>
+					  </div>
+					  <div class="modal-body">
+						<div class="form-title text-center">
+						  <h4>Employer Signup</h4>
+						</div>
+						<div class="d-flex flex-column text-center">
+						  <form autocomplete="off" onsubmit="employeSignup(event)">
+							<div class="form-group ">
+								  <input type="text" class="form-control" id="signupEmployeusername" placeholder="Your Username...">
+							</div>
+							<div class="form-group">
+							  <input type="email" class="form-control" id="signupEmployeEmail"placeholder="Your email address...">
+							</div>
+							<div class="form-group">
+							  <input type="password" class="form-control" id="signupEmployePassword" placeholder="Your password...">
+							</div>
+							<button type="submit" class="btn btn-info btn-block btn-round">Signup</button>
+						  </form>
+						  
+						  <div class="text-center text-muted delimiter">or use a social network</div>
+						  <div class="d-flex justify-content-center social-buttons">
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Twitter">
+							  <i class="fab fa-twitter"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Facebook">
+							  <i class="fab fa-facebook"></i>
+							</button>
+							<button type="button" class="btn btn-secondary btn-round" data-toggle="tooltip" data-placement="top" title="Linkedin">
+							  <i class="fab fa-linkedin"></i>
+							</button>
+						  </di>
+						</div>
+					  </div>
+					</div>
+  
+				  </div>
+				</div>
+			  </section>
+				<!-- End EmployerSignup Modal -->
 
 
 			<!-- start banner Area -->
@@ -93,7 +296,7 @@
 							<div class="single-service">
 								<h4><span class="lnr lnr-user"></span>Expert Technicians</h4>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									We are a team of Brilliant minded people who loves to solve problems a lot.
 								</p>
 							</div>
 						</div>
@@ -101,7 +304,7 @@
 							<div class="single-service">
 								<h4><span class="lnr lnr-license"></span>Professional Service</h4>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									We are providing professional service to all the students and recruiters.
 								</p>								
 							</div>
 						</div>
@@ -109,7 +312,7 @@
 							<div class="single-service">
 								<h4><span class="lnr lnr-phone"></span>Great Support</h4>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									We are available 24/7 for everyone's help and to provide seamless service.
 								</p>								
 							</div>
 						</div>
@@ -117,7 +320,7 @@
 							<div class="single-service">
 								<h4><span class="lnr lnr-rocket"></span>Technical Skills</h4>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									We are a team of Brilliant minded people who loves to solve problems a lot.
 								</p>				
 							</div>
 						</div>
@@ -125,7 +328,7 @@
 							<div class="single-service">
 								<h4><span class="lnr lnr-diamond"></span>Highly Recomended</h4>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									We recommend evry frehser to use our product everyday as we are providing new opportunities to frehsers everyday.
 								</p>								
 							</div>
 						</div>
@@ -133,7 +336,7 @@
 							<div class="single-service">
 								<h4><span class="lnr lnr-bubble"></span>Positive Reviews</h4>
 								<p>
-									Usage of the Internet is becoming more common due to rapid advancement of technology and power.
+									Users are loving it and we gain confidence over it.
 								</p>									
 							</div>
 						</div>						
@@ -153,7 +356,7 @@
 							<h6 class="text-uppercase text-white">Basic & Common Repairs</h6>
 							<h1>Who we are</h1>
 							<p>
-								Computer users and programmers have become so accustomed to using Windows, even for the changing capabilities and the appearances of the graphical.
+								We are a team of Brilliant minded people who loves to solve problems a lot and we are engineers to provide placement opportunities to freshers to have a bright future.
 							</p>
 						</div>
 						<div class="col-lg-3 feat-img no-padding">
@@ -163,7 +366,7 @@
 							<h6 class="text-uppercase text-white">Basic & Common Repairs</h6>
 							<h1>What we do</h1>
 							<p>
-								Computer users and programmers have become so accustomed to using Windows, even for the changing capabilities and the appearances of the graphical.
+								We provide a very large number of opportunities to frehsers for thier placement on a regular basis.
 							</p>
 						</div>
 					</div>
@@ -193,11 +396,11 @@
 						        </div>
 						    </div>
 						    <div class="meta-text mt-30 text-center">
-							    <h4>Ethel Davis</h4>
-							    <p>Managing Director (Sales)</p>									    	
+							    <h4>Gautam Khatri</h4>
+							    <p>Founder </p>									    	
 						    </div>
 						</div>
-						<div class="col-md-3 single-team">
+						<!-- <div class="col-md-3 single-team">
 						    <div class="thumb">
 						        <img class="img-fluid" src="img/pages/t2.jpg" alt="">
 						        <div class="align-items-center justify-content-center d-flex">
@@ -238,7 +441,7 @@
 							    <h4>Lena Keller</h4>
 							    <p>Creative Content Developer</p>			    	
 						    </div>
-						</div>																									
+						</div>																									 -->
 				
 					</div>
 				</div>	
@@ -254,8 +457,8 @@
 							<div class="title text-center">
 								<h1 class="mb-10 text-white">Join us today without any hesitation</h1>
 								<p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-								<a class="primary-btn" href="#">I am a Candidate</a>
-								<a class="primary-btn" href="#">We are an Employer</a>
+								<a class="primary-btn" href="#" id="loginCandidate">I am a Candidate</a>
+								<a class="primary-btn" href="#" id="loginEmploye">We are an Employer</a>
 							</div>
 						</div>
 					</div>	
@@ -264,7 +467,7 @@
 			<!-- End calto-action Area -->
 
 			<!-- Start testimonial Area -->
-			<section class="testimonial-area section-gap" id="review">
+			<!-- <section class="testimonial-area section-gap" id="review">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-60 col-lg-8">
@@ -343,7 +546,7 @@
 						</div>
 					</div>
 				</div>	
-			</section>
+			</section> -->
 			<!-- End testimonial Area -->
 			
 		
@@ -353,12 +556,12 @@
 					<div class="row">
 						<div class="col-lg-3  col-md-12">
 							<div class="single-footer-widget">
-								<h6>Top Products</h6>
+								<!-- <h6>Top Products</h6> -->
 								<ul class="footer-nav">
-									<li><a href="#">Managed Website</a></li>
-									<li><a href="#">Manage Reputation</a></li>
-									<li><a href="#">Power Tools</a></li>
-									<li><a href="#">Marketing Service</a></li>
+									<li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+									<li><a href="about-us.html">About Us</a></li>
+									<li><a id="signupBtnModal" href="#">Sgnup</a></li>
+									<li><a id="loginBtnModal" href="#">Login</a></li>
 								</ul>
 							</div>
 						</div>
@@ -388,7 +591,7 @@
 						</div>
 						<div class="col-lg-3  col-md-12">
 							<div class="single-footer-widget mail-chimp">
-								<h6 class="mb-20">Instragram Feed</h6>
+								<h6 class="mb-20">Job Feed</h6>
 								<ul class="instafeed d-flex flex-wrap">
 									<li><img src="img/i1.jpg" alt=""></li>
 									<li><img src="img/i2.jpg" alt=""></li>
@@ -406,7 +609,7 @@
 					<div class="row footer-bottom d-flex justify-content-between">
 						<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Job Portal is made with <i class="fa fa-heart-o" aria-hidden="true"></i> for Students</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</p>
 						<div class="col-lg-4 col-sm-12 footer-social">

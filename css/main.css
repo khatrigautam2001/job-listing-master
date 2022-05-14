@@ -1877,7 +1877,7 @@ h1, h2, h3, h4, h5, h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  padding: 14px 0;
+  /* padding: 14px 0; */
   position: fixed;
   left: 0;
   top: 0;
@@ -2027,6 +2027,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Nav Meu Styling */
+.navbar-brand, .navbar-toggler, .nav-link, .navbar-toggler-icon{
+  color: #fff !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
 .nav-menu a {
   padding: 6px 10px;
   text-decoration: none;
@@ -2561,6 +2572,31 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 20px;
 }
 
+.post-list .btnGroup{
+  text-align: center;
+  margin-bottom: 20px; 
+}
+.post-list .btnGroup button{
+  background: none;
+  border:1px solid #a9a9a9;
+  text-align: center;
+  cursor: pointer;
+  margin-right: 10px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  padding: 5px 10px;
+  outline: none;
+}
+.post-list .btnGroup button:hover, .post-list .btnGroup button:focus, #focusedBtn{
+  background: #23d9f0;
+}
+
+/* #focusedBtn:focus-within {
+  background: yellow;
+} */
+
 .post-list .cat-list li {
   text-align: center;
   margin-right: 10px;
@@ -2575,17 +2611,20 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 5px 10px;
 }
 
-.post-list .cat-list li a {
+.post-list .cat-list li button {
   text-transform: uppercase;
   font-weight: 600;
   color: #222;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .post-list .cat-list li:hover {
   background-color: #49e4fa;
 }
 
-.post-list .cat-list li:hover a {
+.post-list .cat-list li:hover button {
   color: #fff;
 }
 
@@ -3447,7 +3486,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 991.98px) {
   .single-footer-widget {
-    margin-bottom: 70px;
+    margin-bottom: 0px;
   }
 }
 

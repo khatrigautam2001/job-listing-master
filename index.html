@@ -41,31 +41,55 @@
 
 			  <header id="header" id="home">
 			    <div class="container">
-			    	<div class="row align-items-center justify-content-between d-flex">
-				      <div id="logo">
-				        <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
-				      </div>
-				      <nav id="nav-menu-container">
+			    	<!-- <div class="row align-items-center justify-content-between d-flex">				       -->
+				      <!-- <nav id="nav-menu-container">
 				        <ul class="nav-menu">
 				          <li class="menu-active"><a href="index.html">Home</a></li>
 				          <li><a href="about-us.html">About Us</a></li>
-				          <!-- <li><a href="category.html">Category</a></li> -->
-				          <!-- <li><a href="price.html">Price</a></li> -->
+				         <li><a href="category.html">Category</a></li>
 				          <li><a href="blog-home.html">Blog</a></li>
 				          <li><a href="contact.html">Contact</a></li>
-				          <!-- <li class="menu-has-children"><a href="">Pages</a>
+				           <li class="menu-has-children"><a href="">Pages</a>
 				            <ul>
 								<li><a href="elements.html">elements</a></li>
 								<li><a href="search.html">search</a></li>
-								<li><a href="single.html">single</a></li>
-				            </ul> -->
+								<li><a href="jobs.html">single</a></li>
+				            </ul>
 				          </li>
 				          <li><a id="signupBtnModal" class="ticker-btn" href="#">Signup</a></li>
 				          <li><a id="loginBtnModal" class="ticker-btn" href="#">Login</a></li>				          				          
 				          <li><a style="cursor: pointer;" id="logoutBtnModal" class="ticker-btn d-none" onclick="logout()">Logout</a></li>				          				          
 				        </ul>
-				      </nav><!-- #nav-menu-container -->		    		
-			    	</div>
+				      </nav>  -->
+							<nav class="navbar navbar-expand-lg navbar-light bg-tra">
+								<a class="navbar-brand" href="#">Job Portal</a>
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="navbar-toggler-icon">   
+										<i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+									</span>
+									<!-- <span class="navbar-toggler-icon"></span> -->
+								</button>
+							
+								<div class="collapse navbar-collapse" id="navbarSupportedContent">
+									<ul class="navbar-nav ml-auto mr-xs-auto">
+										<li class="nav-item active">
+											<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+										</li>
+										<li class="nav-item active">
+											<a class="nav-link" href="about-us.html">About Us</a>
+										</li>
+										<li class="nav-item active">
+											<a id="signupBtnModal" class="nav-link" href="#">Sgnup</a>
+										</li>
+										<li class="nav-item active">
+											<a id="loginBtnModal" class="nav-link" href="#">Login</a>
+										</li>
+										<li class="nav-item active">
+											<a style="cursor: pointer;" id="logoutBtnModal" class="nav-link d-none" href="#" onclick="logout()">Logout</a>
+										</li>										
+									</ul>
+								</div>
+							</nav>		    	
 			    </div>
 			  </header><!-- #header -->
 
@@ -345,9 +369,17 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-6">
 							<div class="single-feature">
+								<h4>Profiling</h4>
+								<p>
+									First of all Build your Profile by logging in.
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<div class="single-feature">
 								<h4>Searching</h4>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing.
+									After Building Profile<br> SEARCH for Jobs.
 								</p>
 							</div>
 						</div>
@@ -355,23 +387,15 @@
 							<div class="single-feature">
 								<h4>Applying</h4>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing.
+									After searching apply for relevant Jobs.
 								</p>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6">
 							<div class="single-feature">
-								<h4>Security</h4>
+								<h4>Recruiting</h4>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing.
-								</p>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-6">
-							<div class="single-feature">
-								<h4>Notifications</h4>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing.
+									Recruiter will look all the profiles in their dashboard.
 								</p>
 							</div>
 						</div>																		
@@ -483,7 +507,7 @@
 					<div class="row">
 						<div class="col-lg-2 col-md-4 col-sm-6">
 							<div class="single-fcat">
-								<a href="category.html">
+								<a href="#job-posting-area">
 									<img src="img/o1.png" alt="">
 								</a>
 								<p>Accounting</p>
@@ -491,7 +515,7 @@
 						</div>
 						<div class="col-lg-2 col-md-4 col-sm-6">
 							<div class="single-fcat">
-								<a href="category.html">
+								<a href="#job-posting-area">
 									<img src="img/o2.png" alt="">
 								</a>
 								<p>Development</p>
@@ -499,7 +523,7 @@
 						</div>
 						<div class="col-lg-2 col-md-4 col-sm-6">
 							<div class="single-fcat">
-								<a href="category.html">
+								<a href="#job-posting-area">
 									<img src="img/o3.png" alt="">
 								</a>
 								<p>Technology</p>
@@ -507,7 +531,7 @@
 						</div>
 						<div class="col-lg-2 col-md-4 col-sm-6">
 							<div class="single-fcat">
-								<a href="category.html">
+								<a href="#job-posting-area">
 									<img src="img/o4.png" alt="">
 								</a>
 								<p>Media & News</p>
@@ -515,7 +539,7 @@
 						</div>
 						<div class="col-lg-2 col-md-4 col-sm-6">
 							<div class="single-fcat">
-								<a href="category.html">
+								<a href="#job-posting-area">
 									<img src="img/o5.png" alt="">
 								</a>
 								<p>Medical</p>
@@ -523,7 +547,7 @@
 						</div>
 						<div class="col-lg-2 col-md-4 col-sm-6">
 							<div class="single-fcat">
-								<a href="category.html">
+								<a href="#job-posting-area">
 									<img src="img/o6.png" alt="">
 								</a>
 								<p>Goverment</p>
@@ -535,260 +559,25 @@
 			<!-- End feature-cat Area -->
 			
 			<!-- Start post Area -->
-			<!-- <section class="post-area section-gap">
+			<section class="post-area section-gap" id="job-posting-area">
 				<div class="container">
 					<div class="row justify-content-center d-flex">
 						<div class="col-lg-8 post-list">
-							<ul class="cat-list">
-								<li><a href="#">Recent</a></li>
-								<li><a href="#">Full Time</a></li>
-								<li><a href="#">Intern</a></li>
-								<li><a href="#">part Time</a></li>
-							</ul>
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>					
-										</li>
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Creative Art Designer</h4></a>
-											<h6>Premium Labels Limited</h6>					
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-								</div>
+							<div class="btnGroup">
+								<button id="focusedBtn" onclick="filterJobPosts('All')">All</button>
+								<button onclick="filterJobPosts('Full Time')">Full Time</button>
+								<button onclick="filterJobPosts('Intern')">Intern</button>
 							</div>
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>					
-										</li>
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Creative Art Designer</h4></a>
-											<h6>Premium Labels Limited</h6>					
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-								</div>
-							</div>
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>					
-										</li>
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Creative Art Designer</h4></a>
-											<h6>Premium Labels Limited</h6>					
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-								</div>
-							</div>		
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>					
-										</li>
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Creative Art Designer</h4></a>
-											<h6>Premium Labels Limited</h6>					
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-								</div>
-							</div>
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>					
-										</li>
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Creative Art Designer</h4></a>
-											<h6>Premium Labels Limited</h6>					
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-								</div>
-							</div>
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>					
-										</li>
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Creative Art Designer</h4></a>
-											<h6>Premium Labels Limited</h6>					
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-								</div>
-							</div>															
-							<div class="single-post d-flex flex-row">
-								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>					
-										</li>
-									</ul>
-								</div>
-								<div class="details">
-									<div class="title d-flex flex-row justify-content-between">
-										<div class="titles">
-											<a href="single.html"><h4>Creative Art Designer</h4></a>
-											<h6>Premium Labels Limited</h6>					
-										</div>
-										<ul class="btns">
-											<li><a href="#"><span class="lnr lnr-heart"></span></a></li>
-											<li><a href="#">Apply</a></li>
-										</ul>
-									</div>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
-									</p>
-									<h5>Job Nature: Full time</h5>
-									<p class="address"><span class="lnr lnr-map"></span> 56/8, Panthapath Dhanmondi Dhaka</p>
-									<p class="address"><span class="lnr lnr-database"></span> 15k - 25k</p>
-								</div>
-							</div>	
-							
+							<!-- <ul class="cat-list" id="jobList">
+								<li><button class="catButton" onclick="filterJobPosts('All')">All</button></li>
+								<li><button onclick="filterJobPosts('Full Time')">Full Time</button></li>
+								<li><button onclick="filterJobPosts('Intern')">Intern</button></li>
+							</ul> -->
+							<div id="jobsContainer"></div>
 							<a class="text-uppercase loadmore-btn mx-auto d-block" href="category.html">Load More job Posts</a>
-
 						</div>
 						<div class="col-lg-4 sidebar">
-							<div class="single-slidebar">
+							<!-- <div class="single-slidebar">
 								<h4>Jobs by Location</h4>
 								<ul class="cat-list">
 									<li><a class="justify-content-between d-flex" href="category.html"><p>New York</p><span>37</span></a></li>
@@ -806,7 +595,7 @@
 								<div class="active-relatedjob-carusel">
 									<div class="single-rated">
 										<img class="img-fluid" src="img/r1.jpg" alt="">
-										<a href="single.html"><h4>Creative Art Designer</h4></a>
+										<a href="jobs.html"><h4>Creative Art Designer</h4></a>
 										<h6>Premium Labels Limited</h6>
 										<p>
 											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
@@ -818,7 +607,7 @@
 									</div>
 									<div class="single-rated">
 										<img class="img-fluid" src="img/r1.jpg" alt="">
-										<a href="single.html"><h4>Creative Art Designer</h4></a>
+										<a href="jobs.html"><h4>Creative Art Designer</h4></a>
 										<h6>Premium Labels Limited</h6>
 										<p>
 											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
@@ -830,7 +619,7 @@
 									</div>
 									<div class="single-rated">
 										<img class="img-fluid" src="img/r1.jpg" alt="">
-										<a href="single.html"><h4>Creative Art Designer</h4></a>
+										<a href="jobs.html"><h4>Creative Art Designer</h4></a>
 										<h6>Premium Labels Limited</h6>
 										<p>
 											Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temporinc ididunt ut dolore magna aliqua.
@@ -860,7 +649,7 @@
 								<h4>Carrer Advice Blog</h4>
 								<div class="blog-list">
 									<div class="single-blog " style="background:#000 url(img/blog1.jpg);">
-										<a href="single.html"><h4>Home Audio Recording <br>
+										<a href="jobs.html"><h4>Home Audio Recording <br>
 										For Everyone</h4></a>
 										<div class="meta justify-content-between d-flex">
 											<p>
@@ -875,7 +664,7 @@
 										</div>
 									</div>
 									<div class="single-blog " style="background:#000 url(img/blog2.jpg);">
-										<a href="single.html"><h4>Home Audio Recording <br>
+										<a href="jobs.html"><h4>Home Audio Recording <br>
 										For Everyone</h4></a>
 										<div class="meta justify-content-between d-flex">
 											<p>
@@ -890,7 +679,7 @@
 										</div>
 									</div>
 									<div class="single-blog " style="background:#000 url(img/blog1.jpg);">
-										<a href="single.html"><h4>Home Audio Recording <br>
+										<a href="jobs.html"><h4>Home Audio Recording <br>
 										For Everyone</h4></a>
 										<div class="meta justify-content-between d-flex">
 											<p>
@@ -905,12 +694,12 @@
 										</div>
 									</div>																		
 								</div>
-							</div>							
+							</div>							 -->
 
 						</div>
 					</div>
 				</div>	
-			</section> -->
+			</section>
 			<!-- End post Area -->
 				
 			
@@ -1128,12 +917,12 @@
 					<div class="row">
 						<div class="col-lg-3  col-md-12">
 							<div class="single-footer-widget">
-								<h6>Top Products</h6>
+								<!-- <h6>Top Products</h6> -->
 								<ul class="footer-nav">
-									<li><a href="#">Managed Website</a></li>
-									<li><a href="#">Manage Reputation</a></li>
-									<li><a href="#">Power Tools</a></li>
-									<li><a href="#">Marketing Service</a></li>
+									<li><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+									<li><a href="about-us.html">About Us</a></li>
+									<li><a id="signupBtnModal" href="#">Sgnup</a></li>
+									<li><a id="loginBtnModal" href="#">Login</a></li>
 								</ul>
 							</div>
 						</div>
@@ -1163,7 +952,7 @@
 						</div>
 						<div class="col-lg-3  col-md-12">
 							<div class="single-footer-widget mail-chimp">
-								<h6 class="mb-20">Instragram Feed</h6>
+								<h6 class="mb-20">Job Feed</h6>
 								<ul class="instafeed d-flex flex-wrap">
 									<li><img src="img/i1.jpg" alt=""></li>
 									<li><img src="img/i2.jpg" alt=""></li>
@@ -1181,7 +970,7 @@
 					<div class="row footer-bottom d-flex justify-content-between">
 						<p class="col-lg-8 col-sm-12 footer-text m-0 text-white">
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Job Portal is made with <i class="fa fa-heart-o" aria-hidden="true"></i> for Students</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</p>
 						<div class="col-lg-4 col-sm-12 footer-social">
@@ -1243,6 +1032,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 			<script src="./firebase/auth.js"></script>
     		<script src="./firebase/firestore-db.js"></script>
+				<script src="./js/jobPosts.js"></script>
 		</body>
 </html>
 

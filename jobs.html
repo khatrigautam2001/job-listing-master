@@ -81,21 +81,10 @@
 			<section class="post-area section-gap">
 				<div class="container">
 					<div class="row justify-content-center d-flex">
-						<div class="col-lg-8 post-list">
+						<div class="col-lg-8 post-list" id="detailedJobInfo">
 							<div class="single-post d-flex flex-row">
 								<div class="thumb">
-									<img src="img/post.png" alt="">
-									<ul class="tags">
-										<li>
-											<a href="#">Art</a>
-										</li>
-										<li>
-											<a href="#">Media</a>
-										</li>
-										<li>
-											<a href="#">Design</a>					
-										</li>
-									</ul>
+									<img src="img/post.png" alt="">									
 								</div>
 								<div class="details">
 									<div class="title d-flex flex-row justify-content-between">
@@ -425,6 +414,28 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			<script src="js/parallax.min.js"></script>		
 			<script src="js/mail-script.js"></script>	
 			<script src="js/main.js"></script>	
+			<!-- Firebase -->
+			<script src="https://www.gstatic.com/firebasejs/9.7.0/firebase-app-compat.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/9.7.0/firebase-auth-compat.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore-compat.js"></script>
+			<script src="https://www.gstatic.com/firebasejs/9.7.0/firebase-storage-compat.js"></script>
+			
+			<script>
+				// Your web app's Firebase configuration
+				
+				var firebaseConfig = {
+					apiKey: "AIzaSyDVWZmtdFvzJe6IyqyyDtpZCRdeN4jAngc",
+					authDomain: "job-portal-firebase-e4f1b.firebaseapp.com",
+					projectId: "job-portal-firebase-e4f1b",
+					storageBucket: "job-portal-firebase-e4f1b.appspot.com",
+					messagingSenderId: "33798932822",
+					appId: "1:33798932822:web:4e7c8fd459dd9dffddaef7"
+				};
+
+				// Initialize Firebase
+				firebase.initializeApp(firebaseConfig);
+			</script>
+			<script src="./js/exactJobPage.js"></script>
 		</body>
 	</html>
 

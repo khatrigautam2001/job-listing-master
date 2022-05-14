@@ -36,3 +36,18 @@ const handleSaveProfile = async () => {
 	document.getElementById("editProfileBtn").classList.remove("d-none");
 	document.getElementById("saveProfile").classList.add("d-none");
 };
+
+function handleSendEmail(name, email) {
+
+	console.log("email clicked");
+	var formattedBody = `Hi ${name},
+	I came across your profile on JobPortal and wanted to reach out regarding a unique opportunity.		
+I Work for [Company Name], and we are looking to hire a [Job Title]. I think your experience in [Field/Skill] is a great fit for this role.		
+If you're interested in learning more, I'd love to connect. Would you be available for a quick phone call on [Date/Time]?		
+I hope you have a great day.		
+		
+Thanks and Regards,		
+[Your name]`;
+var mailToLink = `mailto:${email}?subject=MailfromJobPortal&body=` + encodeURIComponent(formattedBody);
+window.location.href = mailToLink;
+}

@@ -242,9 +242,12 @@ async function allUserDetails() {
                 <td>${info.phoneno}</td>
                 <td>${info.preferredDomain}</td>
                 <td>${info.experience}</td>
-                
+				${info.resumeUrl ? `<td><a href="${info.resumeUrl}" target="_blank">View Resume</a></td>` : `<td> Not Uploaded</td>`}
+                <td><button onclick="handleSendEmail('${info.name}', '${info.email}')" type="button">Send email</button></td>                
             </tr>
             `;
+			// <td><a href='${info.resumeUrl}'>Open Resume</a> </td>
+			// href="mailto:${info.email}?subject=MailfromJobPortal&body=Body-goes-here"
 	});
 }
 
