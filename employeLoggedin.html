@@ -32,34 +32,51 @@
 </head>
 <body>
   <header id="header" id="home">
-    <div class="container">
-      <div class="row align-items-center justify-content-between d-flex">
-        <div id="logo">
-          <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
-        </div>
-        <nav id="nav-menu-container">
-          <ul class="nav-menu">
-            <li class="menu-active"><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <!-- <li><a href="category.html">Category</a></li> -->
-            <!-- <li><a href="price.html">Price</a></li> -->
-            <li><a href="blog-home.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <!-- <li class="menu-has-children"><a href="">Pages</a>
-              <ul>
-          <li><a href="elements.html">elements</a></li>
-          <li><a href="search.html">search</a></li>
-          <li><a href="jobs.html">single</a></li>
-              </ul> -->
-            </li>
-            <li><a id="signupBtnModal" class="ticker-btn" href="#">Signup</a></li>
-            <li><a id="loginBtnModal" class="ticker-btn" href="#">Login</a></li>				          				          
-            <li><a style="cursor: pointer;" id="logoutBtnModal" class="ticker-btn d-none" onclick="logout()">Logout</a></li>				          				          
-          </ul>
-        </nav><!-- #nav-menu-container -->		    		
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <a class="navbar-brand" href="#">Job Portal</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon">
+          <i class="fas fa-bars" style="color: #fff; font-size: 28px"></i>
+        </span>
+        <!-- <span class="navbar-toggler-icon"></span> -->
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mr-xs-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="about-us.html">About Us</a>
+          </li>
+          <li class="nav-item active">
+            <a id="signupBtnModal" class="nav-link" href="#">Sgnup</a>
+          </li>
+          <li class="nav-item active">
+            <a id="loginBtnModal" class="nav-link" href="#">Login</a>
+          </li>
+          <li class="nav-item active">
+            <a
+              style="cursor: pointer"
+              id="logoutBtnModal"
+              class="nav-link d-none"
+              href="#"
+              onclick="logout()"
+              >Logout</a
+            >
+          </li>
+        </ul>
       </div>
-    </div>
-  </header><!-- #header -->
+    </nav>
+  </header>
   
 
   
@@ -144,7 +161,7 @@
                             <a href="">PHP, .Net</a><br/>
                         </div>
                     </div> -->
-                    <div class="col">
+                    <div class="col table-responsive">
                         <table class="table table-striped">
                             <thead>
                               <tr>
@@ -225,6 +242,21 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="/js/employeloggedin.js"></script>
 
-
+        <script src="js/vendor/jquery-2.2.4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>			
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+          <script src="js/easing.min.js"></script>			
+        <script src="js/hoverIntent.js"></script>
+        <script src="js/superfish.min.js"></script>	
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>	
+        <script src="js/owl.carousel.min.js"></script>			
+        <script src="js/jquery.sticky.js"></script>
+        <script src="js/jquery.nice-select.min.js"></script>			
+        <script src="js/parallax.min.js"></script>		
+        <script src="js/mail-script.js"></script>	
+        <script src="js/main.js"></script>	
+  
 </body>
 </html>
